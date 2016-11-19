@@ -11,6 +11,12 @@ class Pancake extends React.Component {
       timeCooked: this.state.timeCooked + 1
     })
   }
+  componentWillUnmount(){
+    this.cleanUpInterval()
+  }
+  componentDidMount(){
+    this.startInterval()
+  }
 
   startInterval() {
     this.interval = setInterval(this.updateCounter, 1000);

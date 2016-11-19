@@ -8,6 +8,9 @@ class Game extends React.Component {
   setCurrentTime() {
     this.setState({ time: new Date(Date.now())});
   }
+  componentWillMount() {
+    this.setCurrentTime()
+  }
 
   addPancake() {
     this.setState({
